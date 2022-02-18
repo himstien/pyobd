@@ -5,6 +5,9 @@
 # Copyright 2004 Donour Sizemore (donour@uchicago.edu)
 # Copyright 2009 Secons Ltd. (www.obdtester.com)
 # Copyright 2021 Jure Poljsak (https://github.com/barracuda-fsh/pyobd)
+# Copyright 2022 Himanshu Akolkar (https://github.com/himstien/pyobd)
+#
+# H.A.: Made changes to obd_io to allow working with the new "main" file
 #
 # This file is part of pyOBD.
 #
@@ -84,8 +87,7 @@ def decrypt_dtc_code(code):
 
 class OBDConnection:
 
-    def __init__(self,portnum,_notify_window, baud, SERTIMEOUT,RECONNATTEMPTS, FAST):
-        self._notify_window = _notify_window
+    def __init__(self,portnum, baud, SERTIMEOUT,RECONNATTEMPTS, FAST):
         if baud == 'AUTO':
             baud = None
         if portnum == 'AUTO':
@@ -98,12 +100,12 @@ class OBDConnection:
         counter = 0
         while counter < RECONNATTEMPTS:
             counter = counter + 1
-            wx.PostEvent(self._notify_window, DebugEvent([2, "Connection attempt:" + str(counter)]))
+            #wx.PostEvent(self._notify_window, DebugEvent([2, "Connection attempt:" + str(counter)]))
             #print (FAST)
             self.connection = obd.OBD(portstr=portnum,baudrate=baud,fast=FAST, timeout=truncate(float(SERTIMEOUT),1))
             #print (self.connection.port_name())
             if self.connection.status() == "Car Connected":
-                wx.PostEvent(self._notify_window, DebugEvent([2, "Connected to: "+ str(self.connection.port_name())]))
+                #wx.PostEvent(self._notify_window, DebugEvent([2, "Connected to: "+ str(self.connection.port_name())]))
                 break
             else:
                 self.connection.close()
