@@ -1,5 +1,18 @@
 # ![PYOBD](/pyobd.gif) PYOBD 
-**This is the free PC program for car diagnostics, aka. reading and displaying your cars OBD2 data(tests, sensors, DTC faults/reset, graphs of live sensor data). If your car supports obd2(which for the last 20 years most of the cars do), then you only need an elm327 adapter and a laptop with this program to diagnose your car. The program is free and open source and it is the only free program that exists for obd2, with this level of functionality, as far as I know. The program is the remake of the program PYOBD. It works on Python3 and all new libraries. It was tested on Linux, Windows, and it should work on Mac too.**
+**THIS code is a fork of barracuda-fsh's pyobd code that ports an old pyobd to python3. His original information can be found below**
+
+**I have added a new py script called "dash_gui_obd_wx.py" which creates a wx based GUI and displays some of the useful sensor data.** 
+**My setup uses a raspi zero with a display screen which toghether are used as a car dashboard place in front of the steering wheel. 
+The code is, of course, available under an open-source license and may be copied/forked and updated to your liking.**
+
+
+
+TO DO: 
+1. Add logging of data to sd card
+2. Add instructions to connect raspi to a bluetooth OBD device and run this script automatically on raspi start-up.
+
+
+This is the free PC program for car diagnostics, aka. reading and displaying your cars OBD2 data(tests, sensors, DTC faults/reset, graphs of live sensor data). If your car supports obd2(which for the last 20 years most of the cars do), then you only need an elm327 adapter and a laptop with this program to diagnose your car. The program is free and open source and it is the only free program that exists for obd2, with this level of functionality, as far as I know. The program is the remake of the program PYOBD. It works on Python3 and all new libraries. It was tested on Linux, Windows, and it should work on Mac too.
 
 You can download the Windows executable version from here - so no install is needed(it may be recognized as malware, but it is made from code you see here - so it is not malware):<br/>
 https://drive.google.com/file/d/1_OIkQDxTOGsdMA4ABl58m6XHdFae_TAH/view?usp=sharing
