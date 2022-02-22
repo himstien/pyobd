@@ -5,7 +5,7 @@
 **My setup uses a raspi zero with a display screen which toghether are used as a car dashboard place in front of the steering wheel. 
 The code is, of course, available under an open-source license and may be copied/forked and updated to your liking.**
 
-
+![alt text](https://github.com/himstien/pyobd/blob/main/OBD_Dash.png)
 
 TO DO: 
 1. Add logging of data to sd card
