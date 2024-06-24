@@ -303,7 +303,7 @@ class MyApp(wx.App):
 
         def initCommunication(self):
             wx.PostEvent(self._notify_window, StatusEvent([0, 1, "Connecting...."]))
-            self.connection = obd_io.OBDConnection(self.portName, self._notify_window, self.baudrate, self.SERTIMEOUT,self.RECONNATTEMPTS, self.FAST)
+            self.connection = obd_io.OBDConnection(self.portName, self.baudrate, self.SERTIMEOUT,self.RECONNATTEMPTS, self.FAST)
             if self.connection.connection.status() != 'Car Connected':  # Cant open serial port
                 wx.PostEvent(self._notify_window, StatusEvent([666]))  # signal apl, that communication was disconnected
                 wx.PostEvent(self._notify_window, StatusEvent([0, 1, "Error cant connect..."]))
